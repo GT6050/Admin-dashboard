@@ -1,6 +1,6 @@
 import 'dotenv/config';
 
-const required = ['PORT', 'DB_URL'];
+const required = ['PORT', 'DB_URL', 'CLIENT_URL'];
 const missing = required.filter((item) => {
 	return !process.env[item];
 });

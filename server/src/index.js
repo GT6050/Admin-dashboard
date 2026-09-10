@@ -4,8 +4,16 @@ import express from 'express';
 import pool from './db/index.js';
 import errorHandler from './middleware/errorHandler.js';
 import AppError from './middleware/Errors/appError.js';
+import cors from 'cors';
 
 const app = express();
+app.use(
+	cors({
+		origin: process.env.CLIENT_URL,
+		credentials: true,
+	}),
+);
+
 const port = process.env.PORT;
 
 app.get('/', (req, res) => {
